@@ -26,7 +26,14 @@ export class AgendarMassagemPage {
       message: 'Confirmar a massagem ' + num,
       buttons: [
         {
-          text: 'confirmar',
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Confirmar',
           role: 'confirm',
           handler: () => {
             this.User = localStorage.getItem('User')
@@ -40,8 +47,10 @@ export class AgendarMassagemPage {
             console.log("cliquei");
             console.log(num);
 
-            console.log('Cancel clicked');
-          }}]
+            console.log('Confirm clicked');
+          }},
+
+          ]
         });
     alert.present();
 
