@@ -36,14 +36,12 @@ export class AgendarMassagemPage {
           text: 'Confirmar',
           role: 'confirm',
           handler: () => {
-            this.User = localStorage.getItem('User')
-            this.angularFD.object(`Pedidos/`).set(
-              {
-                "Pedidos": {
-                  'Barbara':
-                    {"nome": "Barbara", "frutas": "laranja,morango, surpresa", "massagem": "9:00"},
-                }
-              })
+
+            let name = localStorage.getItem('User');
+            this.angularFD.object(`Pedidos/` + name).set(
+
+              {"nome": name, "massagem":num}
+              )
             console.log("cliquei");
             console.log(num);
 

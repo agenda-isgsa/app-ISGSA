@@ -11,6 +11,7 @@ import {Observable} from "rxjs";
 export class AgendarAlimentosPage {
   items: Observable<any[]>;
 
+  visible: boolean;
   constructor(public navCtrl: NavController,
               public angularFD: AngularFireDatabase) {
     this.angularFD.object(`pedidos/frutas/`).set(
@@ -22,9 +23,13 @@ export class AgendarAlimentosPage {
     // var usersRef = this.angularFD.child("users");
 
     angularFD.list('list')
-
+    this.visible = false;
   }
 
+
+toggle(){
+    this.visible = !this.visible;
+}
 
 }
 
