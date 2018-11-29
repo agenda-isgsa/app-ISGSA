@@ -38,7 +38,7 @@ export class AgendarMassagemPage {
           handler: () => {
 
             let name = localStorage.getItem('User');
-            this.angularFD.object(`Pedidos/` + name).set(
+            this.angularFD.object(`Pedidos/` + name).update(
 
               {"nome": name, "massagem":num}
               )
